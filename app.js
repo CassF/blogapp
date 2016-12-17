@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 
-//These are my own modules that require a relative path to find them (As they are not included in the node_modules folder. And nor should they be)
+//These are my own modules that require a relative path to find them
 const adminRoutes = require("./routes/adminRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const app = express();

@@ -2,13 +2,19 @@ const Blogs = require("../models/blog");
 
 class AdminController {
 
+    static showBlog(req,res){
+        res.render("admin");
+    }
+
     /**
      * This function creates a blog post
      */
     static createBlog(req,res){
         if (req.body.action == "Create Blog Post") {
             req.session.blogs.push(req.body.blog);
-            res.redirect("/blogs");
+            // res.redirect("/blogs");
+            res.render("admin");
+            console.log(req.session.blog);
         }
     }
     /**
@@ -20,7 +26,8 @@ class AdminController {
         for (let i in blogs) {
             if(blogs[i].title === title) {
                 blogs.splice(i,1);
-                res.redirect("/blogs");
+                // res.redirect("/blogs");
+                res.render("admin");
             }
         }    
     }
@@ -57,5 +64,5 @@ class AdminController {
 // }
 
 
-
+//Exporting the AdminController class
 module.exports = AdminController;

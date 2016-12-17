@@ -24,5 +24,5 @@ class Blog {
     }
 }
 
-//Export the class so that it can be instantiated anywhere it is 'required'
+//Exporting the Blog class
 module.exports = Blog;
