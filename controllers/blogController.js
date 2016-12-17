@@ -1,10 +1,9 @@
-// const Blogs = require("../models/blog");
+const Blogs = require("../models/blog");
 
-// class BlogController {
-//     static viewBlog
-        
+class BlogController {
+    static viewBlog(req, res){
+        res.render(req.session.blogs);
+    }
+}
 
-// }
-
-
-// module.exports = BlogController;
+module.exports = BlogController;

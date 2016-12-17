@@ -2,14 +2,20 @@ const Blogs = require("../models/blog");
 
 class AdminController {
 
+    /**
+     * This function creates a blog post
+     */
     static createBlog(req,res){
         if (req.body.action == "Create Blog Post") {
             req.session.blogs.push(req.body.blog);
             res.redirect("/blogs");
         }
     }
-
-    static deleteBlog(req, res){
+    /**
+     * This function deletes a blog post
+     * @param title - This is the title of the post that I want to delete
+     */
+    static deleteBlog(title){
         let blogs = req.session.blogs;
         for (let i in blogs) {
             if(blogs[i].title === title) {
