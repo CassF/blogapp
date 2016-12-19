@@ -7,18 +7,26 @@ class Blog {
         if (!obj.blogTitle){
             throw new Error("You must include a first name");
         } else if (typeof obj.blogTitle != "string"){
-            throw new Error("First name must be a string");
+            throw new Error("Blog Title must be a string");
         } else {
             this.blogTitle = obj.blogTitle;
         }
-        
+
         if (!obj.blogContent){
             throw new Error("You must include blog content");
         } else if (typeof obj.blogContent != "string"){
-            throw new Error("First name must be a string");
+            throw new Error("Blog Content must be a string");
         } else {
             this.blogContent = obj.blogContent;
         }
+
+        // if (!obj.blogComment){
+        //     throw new Error("You must include a first name");
+        // } else if (typeof obj.blogComment != "string"){
+        //     throw new Error("Comment must be a string");
+        // } else {
+        //     this.blogComment = obj.blogComment;
+        // }
     }
 }
 

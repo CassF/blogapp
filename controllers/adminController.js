@@ -6,17 +6,12 @@ class AdminController {
      * It loops through the req.session.blogs array and prints the blog title and content for each i tem 
      */
     static showBlog(req,res){
-        let blogs = req.session.blogs;
-            for (let i = 0; i < 3; i++) {
-                if (req.session.blogs) {
-            console.log(req.session.blogs[i].blogTitle);
-            console.log(req.session.blogs[i].blogContent);
+        // let blogs = req.session.blogs;
+        // for (let i = 0; i < 3; i++) {
+        //     console.log(req.session.blogs[i].blogTitle);
+        //     console.log(req.session.blogs[i].blogContent);
             res.render("admin");
-        }
-            else {
-                res.render("admin");
-            }
-    }
+        //  }
     }
     /**
      * This method creates a blog post
@@ -28,8 +23,12 @@ class AdminController {
         console.log(req.session.blogs);
         console.log(req.session.blogs[0].blogTitle);
         console.log(req.session.blogs[0].blogContent);
-        // console.log("It worked!" + req.session.blogs);
         res.redirect("/");  
+
+                for (let i = 0; i < 3; i++) {
+            console.log(req.session.blogs[i].blogTitle);
+            console.log(req.session.blogs[i].blogContent);
+                }
     }
 
     /**
