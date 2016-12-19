@@ -1,4 +1,4 @@
-const Blogs = require("../models/blog");
+const Blog = require("../models/blog");
 
 class AdminController {
 
@@ -13,14 +13,43 @@ class AdminController {
     /**
      * This function creates a blog post
      */
-    static createBlog(req,res){
-        if (req.body.action == "Create Blog Post") {
-            req.session.blogs.push(req.body.blogTitle, req.body.blogContent);
-            // res.redirect("/blogs");
-            res.render("admin");
-            console.log(req.session.blog);
-        }
-    }
+    // static createBlog(req,res){
+    //     if (req.body.action == "Create Blog Post") {
+    //         req.session.blogs.push(req.body.blogTitle, req.body.blogContent);
+    //         // res.redirect("/blogs");
+    //         res.render("admin");
+    //         console.log(req.session.blog);
+    //     }
+    // }
+
+        static createBlog(req, res){
+            req.session.blogs = req.session.blogs || [];
+            const blogPost = new Blog(req.body);
+            req.session.blogs.push(blogPost);
+            
+            console.log("It worked!" + req.session.blogs);
+            // res.redirect("admin");
+            }
+
+
+    // static createBlog(req, res){
+    //     try {
+    //         req.session.blogs = req.session.blogs || [];
+    //         const blogPost = new Blog(req.body);
+    //             .then(() => {
+    //                 req.session.blogs.push(blogPost)
+    //                 console.log("It worked!");
+    //                 res.redirect("/");
+    //             })
+    //             .catch(error => {
+    //                 console.log(`It fucked up because ${error}`);
+    //                 res.redirect("/");
+    //             });    
+    //     } catch (err){
+    //         console.log(err);
+    //         res.redirect("/");
+    //     }
+    // }
     /**
      * This function deletes a blog post
      * @param title - This is the title of the post that I want to delete
@@ -36,7 +65,6 @@ class AdminController {
         }    
     }
 }
-
         //This is a promise, promises work by deffering the execution of the script until the function being called as come back with either a 
         //success or an error. Successes are caught with the .then() function and errors in the .catch()
     //     Blogs.doFetchPosts()
