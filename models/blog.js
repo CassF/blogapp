@@ -8,10 +8,10 @@ class Blog {
 
         if (!session.blogTitle){
             throw new Error("You must include a first name");
-        } else if (typeof session.firstName != "string"){
+        } else if (typeof session.blogTitle != "string"){
             throw new Error("First name must be a string");
         } else {
-            this.blogTitle = req.session.blogs;
+            this.blogTitle = req.session.blogTitle;
         }
 
         if (!session.blogContent){
@@ -19,7 +19,7 @@ class Blog {
         } else if (typeof session.blogContent != "string"){
             throw new Error("First name must be a string");
         } else {
-            this.blogContent = req.session.blogs;
+            this.blogContent = req.session.blogContent;
         }
     }
 }

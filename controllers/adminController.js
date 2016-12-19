@@ -3,6 +3,10 @@ const Blogs = require("../models/blog");
 class AdminController {
 
     static showBlog(req,res){
+        // if (req.session.blogTitle) {
+        //     html += "<br>Your blog title is: " + req.session.blogTitle;
+        // }
+        // res.send(html);
         res.render("admin");
     }
 
@@ -11,7 +15,7 @@ class AdminController {
      */
     static createBlog(req,res){
         if (req.body.action == "Create Blog Post") {
-            req.session.blogs.push(req.body.blog);
+            req.session.blogs.push(req.body.blogTitle, req.body.blogContent);
             // res.redirect("/blogs");
             res.render("admin");
             console.log(req.session.blog);
