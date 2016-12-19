@@ -1,8 +1,5 @@
-
-
 //This is another example of class, in this case we are constructing it, now in this constructor we are looking for the correct object type 
 //AND whether the field actually exists. If anything of these fail in the constructor we throw our own custom error.
-
 class Blog {
 
     constructor(obj){
@@ -14,7 +11,7 @@ class Blog {
         } else {
             this.blogTitle = obj.blogTitle;
         }
-
+        
         if (!obj.blogContent){
             throw new Error("You must include blog content");
         } else if (typeof obj.blogContent != "string"){
@@ -22,7 +19,6 @@ class Blog {
         } else {
             this.blogContent = obj.blogContent;
         }
-        this.sentDate = new Date();
     }
 }
 

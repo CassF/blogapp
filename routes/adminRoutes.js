@@ -11,9 +11,6 @@ router.get("/", adminController.showBlog);
 router.post("/create", adminController.createBlog);
 router.delete("/delete", adminController.deleteBlog);
 
-// OR router.post("/create", adminController.createBlog);
-// router.delete("/delte", adminController.deleteBlog);
-
 
 //Exporting the router object
 module.exports = router;
