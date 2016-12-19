@@ -7,8 +7,8 @@ const blogController = require("../controllers/blogController");
 
 //We are calling two functions on router in this case they are both .get(), which is the HTTP verb, and that takes 2 arguments.
 //1 is the path (from the url), the 2nd is the function to call
-router.get("/blogs", blogController.showBlog);
-router.get("/blogs/:id", blogController.showOneBlog);
+router.get("/", blogController.showBlog);
+router.get("/:id", blogController.showOneBlog);
 // router.post("/blogs", blogController.addComment);
 
 //Exporting the router object

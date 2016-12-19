@@ -7,9 +7,9 @@ const adminController = require("../controllers/adminController");
 
 //Calling a functions on router in this case .post() and .delete(), which are the HTTP verb, and that takes 2 arguments.
 //1 is the path (from the url), the 2nd is the function to call
-router.get("/", adminController.showBlog);
-router.post("/create", adminController.createBlog);
-router.delete("/delete", adminController.deleteBlog);
+router.get("/admin", adminController.showBlog);
+router.post("/admin", adminController.createBlog);
+router.delete("/admin", adminController.deleteBlog);
 
 
 //Exporting the router object

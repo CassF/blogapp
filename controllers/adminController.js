@@ -6,14 +6,12 @@ class AdminController {
      * It loops through the req.session.blogs array and prints the blog title and content for each i tem 
      */
     static showBlog(req,res){
-        res.render("home");
         let blogs = req.session.blogs;
         for (let i = 0; i < blogs.length; i++) {
             console.log(blogs[i].blogTitle);
             console.log(blogs[i].blogContent);
-            // $("#blogList").append(`<a href="#" name="post" class="post" data-id="${blogs[i].blogTitle}"><p>${blogs[i].blogContent}</p></a>`);
-            // $("#blogList").append(`<h2>${blogs[i].blogTitle}</h2>`);
         }
+        res.render("admin");
     }
 
     /**
@@ -24,7 +22,14 @@ class AdminController {
         const blogPost = new Blog(req.body);
         req.session.blogs.push(blogPost);
         console.log(req.session.blogs);
-        res.redirect("/");  
+        //Test loop to view blogTitle and blogContent of each req.session.blogs
+        let blogs = req.session.blogs;
+        for (let i = 0; i < blogs.length; i++) {
+            console.log(blogs[i].blogTitle);
+            console.log(blogs[i].blogContent);
+        }
+        res.render("admin");  
+
     }
 
     /**

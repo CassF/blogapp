@@ -2,31 +2,14 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/materialize.css">
-        <title>Blog</title>
+        <title>Showing blog list</title>
     </head>
     <body>
-        <h1>Home.ejs</h1>
-        <div class="row">
-            <form class="col s12" method="POST" action="/create">
-                <div class="row">
-                    <div class="input-field col s6">
-                    <input placeholder="Blog Title" name="blogTitle" id="blogTitle" type="text" class="validate" required>
-                    <label for="blog_Title">Blog Title</label>        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                    <input placeholder="Blog Content" name="blogContent" id="blogContent" type="text" class="validate" required>
-                    <label for="blog_Content">Blog Content</label>        
-                    </div>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Create Blog Post
-                </button>
-            </form>
-        </div>
-
+        <h1>Showing blog list</h1>
         <div id="blogList">
+
         </div>
+        <a href="/admin">Admin</a>
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/blogList.js"></script>

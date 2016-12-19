@@ -5,7 +5,7 @@ class Blog {
     constructor(obj){
 
         if (!obj.blogTitle){
-            throw new Error("You must include a first name");
+            throw new Error("You must include blog title");
         } else if (typeof obj.blogTitle != "string"){
             throw new Error("Blog Title must be a string");
         } else {
