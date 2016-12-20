@@ -10,15 +10,17 @@ const blogRoutes = require("./routes/blogRoutes");
 const app = express();
 
 //View Engine
-app.set('view engine' , 'ejs');
+app.set('view engine', 'ejs');
 
 //Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
-app.use(session({secret:"anystringoftext",
-                saveUninitialized: true,
-                resave: true}));
+app.use(session({
+    secret: "anystringoftext",
+    saveUninitialized: true,
+    resave: true
+}));
 
 //Routes
 app.use(adminRoutes);

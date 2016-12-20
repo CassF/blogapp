@@ -2,10 +2,10 @@ const Blogs = require("../models/blog");
 
 class BlogController {
 
-    static showBlog(req,res){
+    static showBlog(req, res) {
         res.render("home", {
             blogs: req.session.blogs
-            
+
         });
     }
 
@@ -23,9 +23,9 @@ class BlogController {
     //     }
     // }
 
-    static showOneBlog(req,res){
+    static showOneBlog(req, res) {
         res.render("singleblog", {
-            blogs: req.session.blogs  
+            blogs: req.session.blogs
         });
     }
 }

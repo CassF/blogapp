@@ -8,7 +8,7 @@ $(() => {
             method: 'DELETE'
         })
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 window.location.href = "/admin";
             });
     });

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/materialize.css">
-        <title>Showing blog list</title>
-    </head>
-    <body>
-        <h1>Showing blog list</h1>
-        <div>
-            <% for (let i in blogs) { %>
-                <article>
-                    <a href = "/:id"><h1><%= blogs[i].blogTitle %></h1></a>
-                    <p><%= blogs[i].blogContent %></p>
-                </article>
-            <% } %> 
-        </div>
-        <a href="/admin">Admin</a>
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/materialize.js"></script>
-         <script src="js/deleteBlog.js"></script>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="css/materialize.css">
+    <title>Showing blog list</title>
+</head>
+
+<body>
+    <h1>Showing blog list</h1>
+    <div>
+        <% for (let i in blogs) { %>
+            <article>
+                <a href="/:id">
+                    <h1>
+                        <%= blogs[i].blogTitle %>
+                    </h1>
+                </a>
+                <p>
+                    <%= blogs[i].blogContent %>
+                </p>
+            </article>
+            <% } %>
+    </div>
+    <a href="/admin">Admin</a>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/deleteBlog.js"></script>
+</body>
+
 </html>
