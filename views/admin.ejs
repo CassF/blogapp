@@ -27,13 +27,17 @@
         <div>
             <% for (let i in blogs) { %>
                 <article>
-                    <h1><%= blogs[i].blogTitle %></h1>
+                    <a href = "/:id"><h1><%= blogs[i].blogTitle %></h1></a>
                     <p><%= blogs[i].blogContent %></p>
                 </article>
             <% } %> 
         </div>
+        <input type="search" id="deleteBar">
+        <button id="deleteBlog">Delete</button>
+
         <a href="/">Back to Home</a>
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
+        <script src="js/deleteBlog.js"></script>
     </body>
 </html>

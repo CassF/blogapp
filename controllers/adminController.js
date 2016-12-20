@@ -19,13 +19,6 @@ class AdminController {
         const blogPost = new Blog(req.body);
         req.session.blogs.push(blogPost);
         console.log(req.session.blogs);
-        let blogs = req.session.blogs;
-        //Test loop to view blogTitle and blogContent of each req.session.blogs
-        // let blogs = req.session.blogs;
-        // for (let i = 0; i < blogs.length; i++) {
-        //     console.log(blogs[i].blogTitle);
-        //     console.log(blogs[i].blogContent);
-        // }
         res.render("admin", {
             blogs: req.session.blogs
         });  
@@ -35,14 +28,18 @@ class AdminController {
      * This method deletes a blog post
      * @param title - This is the title of the post that I want to delete
      */
-    static deleteBlog(title){
+    static deleteBlog(req, res){
         let blogs = req.session.blogs;
+        
         for (let i in blogs) {
-            if(blogs[i].title === title) {
+            console.log(blogs[i].blogTitle);
+            console.log(req.params.title);
+            if (blogs[i].blogTitle == req.params.title) {
                 blogs.splice(i,1);
-                res.render("admin");
             }
         }    
+        req.session.blogs = blogs;
+        res.status(200).send("Done");
     }
 }
 

@@ -9,7 +9,7 @@ const adminController = require("../controllers/adminController");
 //1 is the path (from the url), the 2nd is the function to call
 router.get("/admin", adminController.showBlog);
 router.post("/admin", adminController.createBlog);
-router.delete("/admin", adminController.deleteBlog);
+router.delete("/admin/:title", adminController.deleteBlog);
 
 
 //Exporting the router object
