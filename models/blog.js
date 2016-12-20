@@ -19,14 +19,6 @@ class Blog {
         } else {
             this.blogContent = obj.blogContent;
         }
-
-        // if (!obj.blogComment){
-        //     throw new Error("You must include a first name");
-        // } else if (typeof obj.blogComment != "string"){
-        //     throw new Error("Comment must be a string");
-        // } else {
-        //     this.blogComment = obj.blogComment;
-        // }
     }
 }
 
