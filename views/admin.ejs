@@ -24,8 +24,16 @@
                 </button>
             </form>
         </div>
+        <div>
+            <% for (let i in blogs) { %>
+                <article>
+                    <h1><%= blogs[i].blogTitle %></h1>
+                    <p><%= blogs[i].blogContent %></p>
+                </article>
+            <% } %> 
+        </div>
+        <a href="/">Back to Home</a>
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
-        <script src="js/blogList.js"></script>
     </body>
 </html>

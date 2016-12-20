@@ -1,6 +1,7 @@
 //NPM Modules - No relative path as they are in node_modules
 const express = require("express");
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
 const session = require("express-session");
 
 //These are my own modules that require a relative path to find them
