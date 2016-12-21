@@ -29,7 +29,6 @@ class BlogController {
     //     res.status(200).send("Done");
     // }
 
-
     static addComment(req, res) {
         let blogs = req.session.blogs
         for (let i in blogs) {
@@ -40,18 +39,8 @@ class BlogController {
                 console.log(blogs[i]);
             }
         }
-            res.redirect("/");
+        res.redirect("/");
     }
-
-    // static addComment(req, res) {
-    //     let blogs = req.session.blogs
-    //     const comment = new Comments(req.body);
-    //     req.session.blogs.push(comment);
-    //     console.log(req.session.blogs);
-    //     res.render("home", {
-    //         blogs: req.session.blogs,
-    //     });
-    // }
 }
 
 
