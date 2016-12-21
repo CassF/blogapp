@@ -9,24 +9,23 @@ class BlogController {
         });
     }
 
-    // static showOneBlog(req,res){
-    //     let blogs = req.session.blogs;
-    //     for (let i in blogs) {
-    //         if (blogs[i].blogTitle === blogTitle){
-    //             console.log(req.session.blogs[i].blogTitle);
-    //             console.log(req.session.blogs[i].blogContent);
-    //             res.render("admin");
-    //         }else {
-    //             console.log("Blog does not exist");
-    //              res.render("home");
-    //         }
-    //     }
+    // static showOneBlog(req, res) {
+    //     res.render("singleblog", {
+    //         blogs: req.session.blogs
+    //     });
     // }
 
     static showOneBlog(req, res) {
-        res.render("singleblog", {
-            blogs: req.session.blogs
-        });
+        let blogs = req.session.blogs;
+
+        for (let i in blogs) {
+            console.log(blogs[i].blogTitle);
+            console.log(req.params.title);
+            if (blogs[i].blogTitle == req.params.title) {
+                    console.log("hey");
+            }
+        }
+        res.status(200).send("Done");
     }
 }
 
