@@ -3,6 +3,9 @@ const Comments = require("../models/comment")
 
 class BlogController {
 
+    /**
+     * This method shows all blog posts
+     */
     static showBlog(req, res) {
         res.render("home", {
             blogs: req.session.blogs
@@ -10,25 +13,25 @@ class BlogController {
         });
     }
 
+    /**
+     * This method shows one blog posts
+     */
     static showOneBlog(req, res) {
-        res.render("singleblog", {
-            blogs: req.session.blogs
-        });
+        let blogs = req.session.blogs
+        for (let i in blogs) {
+            if (blogs[i].blogTitle === req.body.title) {
+                console.log(req.body.title);
+                // res.redirect("/:title", {
+                //     blogs: req.session.blogs
+                // });
+            }
+        }
     }
 
-    // static showOneBlog(req, res) {
-    //     let blogs = req.session.blogs;
-
-    //     for (let i in blogs) {
-    //         console.log(blogs[i].blogTitle);
-    //         console.log(req.params.title);
-    //         if (blogs[i].blogTitle == req.params.title) {
-    //                 console.log("hey");
-    //         }
-    //     }
-    //     res.status(200).send("Done");
-    // }
-
+    /**
+     * This method adds a comment to a blog post
+     * @param title - This is the title of the post that I want to delete
+     */
     static addComment(req, res) {
         let blogs = req.session.blogs
         for (let i in blogs) {

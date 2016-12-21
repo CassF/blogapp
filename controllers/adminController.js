@@ -19,9 +19,10 @@ class AdminController {
         const blogPost = new Blog(req.body);
         req.session.blogs.push(blogPost);
         console.log(req.session.blogs);
-        res.render("admin", {
-            blogs: req.session.blogs
-        });
+        // res.render("admin", {
+        //     blogs: req.session.blogs
+        // });
+        res.redirect("/admin");
     }
 
     /**
