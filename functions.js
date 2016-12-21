@@ -1,11 +1,4 @@
 class Functions {
-    showBlogA(array) {
-        return new Promise(
-            (resolve) => {
-                resolve(array);
-            }
-        )
-    }
 
     createBlog(array1) {
         return new Promise(
@@ -19,14 +12,6 @@ class Functions {
         return new Promise(
             (resolve) => {
                 resolve(array2.splice(2,1));
-            }
-        )
-    }
-
-    showBlog(array3) {
-        return new Promise(
-            (resolve) => {
-                resolve(array3);
             }
         )
     }
@@ -47,7 +32,5 @@ class Functions {
         )
     }
 };
-
-
 
 module.exports = Functions;

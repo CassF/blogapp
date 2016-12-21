@@ -8,7 +8,7 @@ const func = new Functions();
 
 
 describe("Admin", () => {
-    //works
+
     it("should create a blog post", (done) => {
         let array1 =[{blogTitle:"Blog1", blogContent:"Blog Content 1"}, {blogTitle:"Blog2", blogContent:"Blog Content 2"}];
         func.createBlog(array1)
@@ -22,7 +22,7 @@ describe("Admin", () => {
         let array2 =[{blogTitle:"Blog1", blogContent:"Blog Content 1"}, {blogTitle:"Blog2", blogContent:"Blog Content 2"}, {blogTitle:"Blog3", blogContent:"Blog Content 3"}];
         func.deleteBlog(array2) 
             .then(result => {
-                expect(array2).to.notInclude({blogTitle:"Blog3", blogContent:"Blog Content 3"});
+                expect(array2).to.have.length(2);
                 done();
             })
     });
@@ -37,7 +37,7 @@ describe("User", () => {
                 done();
             })
     });
-    //works
+
     it("should add a comment to a blog post", (done) => {
         let comments =[{comment1:"Comment1", comment2:"Comment2"}, {comment1:"Comment1", comment2:"Comment2"}];
         func.addComment(comments)
