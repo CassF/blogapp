@@ -17,15 +17,18 @@ class BlogController {
      * This method shows one blog posts
      */
     static showOneBlog(req, res) {
-        let blogs = req.session.blogs
+        let blogs = req.session.blogs;
+        let blog;
         for (let i in blogs) {
-            if (blogs[i].blogTitle === req.body.title) {
-                console.log(req.body.title);
-                // res.redirect("/:title", {
-                //     blogs: req.session.blogs
-                // });
+            if (blogs[i].blogTitle === req.params.title) {
+                console.log("BREAK");
+                blog = blogs[i];
+                break;
             }
         }
+        res.render("singleblog", {
+            blog: blog
+        });
     }
 
     /**

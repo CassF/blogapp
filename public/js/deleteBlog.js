@@ -13,17 +13,17 @@ $(() => {
             });
     });
 
-    $("#title").click((e) => {
-        e.preventDefault();
-        let title = $("#title").val();
-        $.ajax({
-            url: `/${title}`,
-            method: 'GET'
-        })
-            .then((data) => {
-                console.log(title);
-                window.location.href = "/:title";
-            });
-    });
+    // $("#title").click((e) => {
+    //     e.preventDefault();
+    //     let title = $("#title").val();
+    //     $.ajax({
+    //         url: `/${title}`,
+    //         method: 'GET'
+    //     })
+    //         .then((data) => {
+    //             console.log(title);
+    //             window.location.href = "/:title";
+    //         });
+    // });
 });
 

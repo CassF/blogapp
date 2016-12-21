@@ -8,15 +8,7 @@ const func = new Functions();
 
 
 describe("Admin", () => {
-    it("should show all blogs", (done) => {
-        let array = ["b1", "b2", "b3", "b4"];
-        func.showBlogA(array)
-            .then(result => {
-                result.should.be.equal(["b1", "b2", "b3", "b4"]);
-                done();
-            })
-    });
-
+    //works
     it("should create a blog post", (done) => {
         let array1 =[{blogTitle:"Blog1", blogContent:"Blog Content 1"}, {blogTitle:"Blog2", blogContent:"Blog Content 2"}];
         func.createBlog(array1)
@@ -33,17 +25,10 @@ describe("Admin", () => {
                 expect(array2).to.notInclude({blogTitle:"Blog3", blogContent:"Blog Content 3"});
                 done();
             })
+    });
 });
 
 describe("User", () => {
-    it("should show all blogs", (done) => {
-        let array = [1, 2, 3, 4];
-        func.showBlog(array)
-            .then(result => {
-                expect(array).to.include(2);
-                done();
-            })
-    });
 
     it("should show one blog posts", (done) => {
         func.showOneBlog("foobar")
@@ -52,14 +37,13 @@ describe("User", () => {
                 done();
             })
     });
-
+    //works
     it("should add a comment to a blog post", (done) => {
-        let array = ["c1", "c2", "c3", "c4"];
-        func.addComment(array)
+        let comments =[{comment1:"Comment1", comment2:"Comment2"}, {comment1:"Comment1", comment2:"Comment2"}];
+        func.addComment(comments)
             .then(result => {
-                expect(array).to.include("c5");
+                expect(comments).to.include({comment1:"Comment3", comment2:"Comment3"});
                 done();
             })
     });
-});
 });

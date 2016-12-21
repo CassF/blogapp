@@ -23,10 +23,10 @@ class Functions {
         )
     }
 
-    showBlog(array) {
+    showBlog(array3) {
         return new Promise(
             (resolve) => {
-                resolve(array);
+                resolve(array3);
             }
         )
     }
@@ -39,10 +39,10 @@ class Functions {
         )
     }
 
-    addComment(array) {
+    addComment(comments) {
         return new Promise(
             (resolve) => {
-                resolve(array.push("c5"));
+                resolve(comments.push({comment1:"Comment3", comment2:"Comment3"}));
             }
         )
     }

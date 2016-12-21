@@ -9,16 +9,19 @@
 <body>
     <h1>Showing blog list</h1>
     <div>
-        <% for (let i in blogs) { %>
             <article>
                 <h1>
-                    <%= blogs[i].blogTitle %>
+                    <%= blog.blogTitle %>
                 </h1>
                 <p>
-                    <%= blogs[i].blogContent %>
+                    <%= blog.blogContent %>
+                </p>
+                <p>
+
+                    <%= blog.comments %>
+
                 </p>
             </article>
-            <% } %>
     </div>
     <a href="/admin">Admin</a>
     <script src="js/jquery-3.1.1.min.js"></script>

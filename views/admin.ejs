@@ -29,7 +29,7 @@
     <div>
         <% for (let i in blogs) { %>
             <article>
-                <a href="/:title">
+                <a href="/<%= blogs[i].blogTitle %>">
                     <h1 id=title>
                         <%= blogs[i].blogTitle %>
                     </h1>
