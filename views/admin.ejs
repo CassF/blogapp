@@ -7,10 +7,11 @@
 </head>
 
 <body>
-    <h1>Blog Demo</h1>
+    <h1 role="pageTitle" class="title">Admin</h1>
     <div class="row">
         <form class="col s12" method="POST" action="/admin">
             <div class="row">
+                <h2 class="inputHeading">Create a new blogpost</h2>
                 <div class="input-field col s6">
                     <input placeholder="Blog Title" name="blogTitle" id="blogTitle" type="text" class="validate" required>
                     <label for="blog_Title">Blog Title</label>
@@ -22,11 +23,11 @@
                     <label for="blog_Content">Blog Content</label>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Create Blog Post
-                </button>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Create Blog Post</button>
         </form>
     </div>
     <div>
+        <h2 class="inputHeading">Blogposts</h2>
         <% for (let i in blogs) { %>
             <article>
                 <a href="/<%= blogs[i].blogTitle %>">
@@ -40,8 +41,11 @@
             </article>
             <% } %>
     </div>
-    <input type="search" id="deleteBar">
-    <button id="deleteBlog">Delete</button>
+    <div>
+        <h2 class="inputHeading">Delete a blogpost</h2>
+        <input type="search" id="deleteBar">
+        <button id="deleteBlog">Delete</button>
+    </div>
 
     <a href="/">Back to Home</a>
     <script src="js/jquery-3.1.1.min.js"></script>

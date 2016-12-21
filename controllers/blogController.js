@@ -37,17 +37,26 @@ class BlogController {
     static addComment(req, res) {
         let blogs = req.session.blogs
         for (let i in blogs) {
+            blogs[i].comments = blogs[i].comments || [];
             if (blogs[i].blogTitle === req.body.title) {
-                blogs[i].comments = blogs[i].comments || [];
-                const comments = new Comments(req.body);
-                blogs[i].comments.push(comments);
-                console.log(blogs[i]);
+                const blogComment = new Comments(req.body);
+                blogs[i].comments.push(blogComment);
+                console.log("BREAK");
+                console.log(Object.values(blogs[i].comments));
+                console.log("BREAK");
             }
         }
         res.redirect("/");
     }
 }
 
+    // static createBlog(req, res) {
+    //     req.session.blogs = req.session.blogs || [];
+    //     const blogPost = new Blog(req.body);
+    //     req.session.blogs.push(blogPost);
+    //     console.log(req.session.blogs);
+    //     res.redirect("/admin");
+    // }
 
 //Exporting the BlogController class
 module.exports = BlogController;

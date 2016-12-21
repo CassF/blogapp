@@ -4,12 +4,12 @@ class Comments {
 
     constructor(obj) {
 
-        if (!obj.comments) {
+        if (!obj.comment) {
             throw new Error("You must include a comment");
-        } else if (typeof obj.comments != "string") {
+        } else if (typeof obj.comment != "string") {
             throw new Error("comment must be a string");
         } else {
-            this.comments = obj.comments;
+            this.comment = obj.comment;
         }
     }
 }

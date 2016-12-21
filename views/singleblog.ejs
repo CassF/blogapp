@@ -7,23 +7,23 @@
 </head>
 
 <body>
-    <h1>Showing blog list</h1>
+    <h1 role="title" class="title">Showing blog list</h1>
     <div>
-            <article>
-                <h1>
-                    <%= blog.blogTitle %>
-                </h1>
+        <article>
+            <h2 class="btitle">
+                <%= blog.blogTitle %>
+            </h2>
+            <p class="bcontent">
+                <%= blog.blogContent %>
+            </p>
+            <h2 class="bcomments">Comments</h2>
                 <p>
-                    <%= blog.blogContent %>
-                </p>
-                <p>
-
                     <%= blog.comments %>
-
                 </p>
-            </article>
+        </article>
     </div>
     <a href="/admin">Admin</a>
+    <a href="/">Home</a>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
 </body>

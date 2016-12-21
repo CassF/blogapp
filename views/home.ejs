@@ -3,27 +3,27 @@
 
 <head>
     <link rel="stylesheet" href="css/materialize.css">
-    <title>Showing blog list</title>
+    <title>Blog</title>
 </head>
 
 <body>
-    <h1>Showing blog list</h1>
+    <h1 role="title" class="title">Blog Posts</h1>
     <div>
         <% for (let i in blogs) { %>
             <article>
                 <a href="/<%= blogs[i].blogTitle %>">
-                    <h1 id=title>
+                    <h1 id=title role="blog title" class="btitle">
                         <%= blogs[i].blogTitle %>
                     </h1>
                 </a>
-                <p>
+                <p role="blog content" class="bcontent">
                     <%= blogs[i].blogContent %>
                 </p>
                 <div class="row">
                     <form class="col s12" method="POST" action="/">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input placeholder="Blog Comment" name="comments" id="comments" type="text" class="validate">
+                                <input placeholder="Blog Comment" name="comment" id="comment" type="text" class="validate">
                                 <input type="hidden" name="title" value="<%= blogs[i].blogTitle %>">
                                 <label for="blog_Title">Blog Title</label>
                             </div>
