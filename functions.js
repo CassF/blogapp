@@ -3,7 +3,7 @@ class Functions {
     createBlog(array1) {
         return new Promise(
             (resolve) => {
-                resolve(array1.push({blogTitle:"Blog3", blogContent:"Blog Content 3"}));
+                resolve(array1.push({ blogTitle: "Blog3", blogContent: "Blog Content 3" }));
             }
         )
     }
@@ -11,7 +11,7 @@ class Functions {
     deleteBlog(array2) {
         return new Promise(
             (resolve) => {
-                resolve(array2.splice(2,1));
+                resolve(array2.splice(2, 1));
             }
         )
     }
@@ -27,7 +27,7 @@ class Functions {
     addComment(comments) {
         return new Promise(
             (resolve) => {
-                resolve(comments.push({comment1:"Comment3", comment2:"Comment3"}));
+                resolve(comments.push({ comment1: "Comment3", comment2: "Comment3" }));
             }
         )
     }

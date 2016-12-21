@@ -21,7 +21,6 @@ class BlogController {
         let blog;
         for (let i in blogs) {
             if (blogs[i].blogTitle === req.params.title) {
-                console.log("BREAK");
                 blog = blogs[i];
                 break;
             }

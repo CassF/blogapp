@@ -33,8 +33,6 @@ class AdminController {
         let blogs = req.session.blogs;
 
         for (let i in blogs) {
-            // console.log(blogs[i].blogTitle);
-            // console.log(req.params.title);
             if (blogs[i].blogTitle == req.params.title) {
                 blogs.splice(i, 1);
             }
