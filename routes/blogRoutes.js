@@ -9,7 +9,7 @@ const blogController = require("../controllers/blogController");
 //1 is the path (from the url), the 2nd is the function to call
 router.get("/", blogController.showBlog);
 router.get("/:title", blogController.showOneBlog);
-// router.post("/blogs", blogController.addComment);
+router.post("/", blogController.addComment);
 
 
 //Exporting the router object
