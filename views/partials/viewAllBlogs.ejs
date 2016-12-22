@@ -1,0 +1,17 @@
+<section>
+    <div id="viewBlogs" class="scrollspy">
+        <h1 class="inputHeading">Blogposts</h1>
+        <% for (let i in blogs) { %>
+            <article class="blogPost container">
+                <a href="/<%= blogs[i].blogTitle %>">
+                    <h2 id=title>
+                        <%= blogs[i].blogTitle %>
+                    </h2>
+                </a>
+                <p>
+                    <%= blogs[i].blogContent %>
+                </p>
+            </article>
+            <% } %>
+    </div>
+</section>

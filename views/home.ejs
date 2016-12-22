@@ -2,39 +2,48 @@
 <html>
 
 <head>
+    <!--Import materialize.css-->
     <link rel="stylesheet" href="css/materialize.css">
-    <title>Blog</title>
+    <!-- Import animate css -->
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <!-- Import my custom index stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Home</title>
 </head>
 
 <body>
-    <h1 role="title" class="title">Blog Posts</h1>
-    <div>
+    <% include ./partials/userHeader %>
+        <h1 role="title" class="title">Blog Posts</h1>
         <% for (let i in blogs) { %>
-            <article>
-                <a href="/<%= blogs[i].blogTitle %>">
-                    <h1 id=title role="blog title" class="btitle">
-                        <%= blogs[i].blogTitle %>
-                    </h1>
-                </a>
-                <p role="blog content" class="bcontent">
-                    <%= blogs[i].blogContent %>
-                </p>
-                <div class="row">
-                    <form class="col s12" method="POST" action="/">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input placeholder="Blog Comment" name="comment" id="comment" type="text" class="validate">
-                                <input type="hidden" name="title" value="<%= blogs[i].blogTitle %>">
-                                <label for="blog_Title">Blog Title</label>
+            <div class="section white">
+                <article class="blogPost container">
+                    <a href="/<%= blogs[i].blogTitle %>">
+                        <h2 id=title role="blog title" class="btitle">
+                            <%= blogs[i].blogTitle %>
+                        </h2>
+                    </a>
+                    <p role="blog content" class="bcontent">
+                        <%= blogs[i].blogContent %>
+                    </p>
+                    <div class="row">
+                        <form class="col s12" method="POST" action="/">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Blog Comment" name="comment" id="comment" type="text" class="validate">
+                                    <input type="hidden" name="title" value="<%= blogs[i].blogTitle %>">
+                                    <label for="blog_Title">Blog Title</label>
+                                </div>
                             </div>
-                        </div>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Add Comment
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Add Comment
                             </button>
-                    </form>
-                </div>
-            </article>
-            <% } %>
-                <a href="/admin">Admin</a>
+                        </form>
+                    </div>
+                </article>
+                <% } %>
+            </div>
+
+            <!-- Input Footer Template -->
+            <% include ./partials/footer %>
                 <script src="js/jquery-3.1.1.min.js"></script>
                 <script src="js/materialize.js"></script>
                 <script src="js/deleteBlog.js"></script>

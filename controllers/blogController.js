@@ -42,21 +42,13 @@ class BlogController {
                 const blogComment = new Comments(req.body);
                 blogs[i].comments.push(blogComment);
                 console.log("BREAK");
-                console.log(Object.values(blogs[i].comments));
+                console.log(blogs[i].comments);
                 console.log("BREAK");
             }
         }
         res.redirect("/");
     }
 }
-
-    // static createBlog(req, res) {
-    //     req.session.blogs = req.session.blogs || [];
-    //     const blogPost = new Blog(req.body);
-    //     req.session.blogs.push(blogPost);
-    //     console.log(req.session.blogs);
-    //     res.redirect("/admin");
-    // }
 
 //Exporting the BlogController class
 module.exports = BlogController;

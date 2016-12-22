@@ -2,30 +2,40 @@
 <html>
 
 <head>
+    <!--Import materialize.css-->
     <link rel="stylesheet" href="css/materialize.css">
-    <title>Showing blog list</title>
+    <!-- Import animate css -->
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <!-- Import my custom index stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>
+        <%= blog.blogTitle %>
+    </title>
 </head>
 
 <body>
-    <h1 role="title" class="title">Showing blog list</h1>
-    <div>
-        <article>
-            <h2 class="btitle">
-                <%= blog.blogTitle %>
-            </h2>
-            <p class="bcontent">
-                <%= blog.blogContent %>
-            </p>
-            <h2 class="bcomments">Comments</h2>
-                <p>
-                    <%= blog.comments %>
+    <% include ./partials/userHeader %>
+
+        <h1 role="title" class="title">Showing blog list</h1>
+        <div>
+            <article>
+                <h2 class="btitle">
+                    <%= blog.blogTitle %>
+                </h2>
+                <p class="bcontent">
+                    <%= blog.blogContent %>
                 </p>
-        </article>
-    </div>
-    <a href="/admin">Admin</a>
-    <a href="/">Home</a>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
+                <h2 class="bcomments">Comments</h2>
+
+                <% for (let i in blog.comments) { %>
+                    <p>
+                        <%= blog.comments[i].comment %>
+                    </p>
+                    <% } %>
+            </article>
+        </div>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
 </body>
 
 </html>
