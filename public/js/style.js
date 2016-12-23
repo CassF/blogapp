@@ -1,5 +1,4 @@
-// $("#createNav").scrollTop($("#createBlog").scrollTop() + 100);
-  $(document).ready(function(){
+$(document).ready(function(){
     $('.scrollspy').scrollSpy();
   });
         

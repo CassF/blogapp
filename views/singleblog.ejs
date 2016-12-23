@@ -18,7 +18,7 @@
     <header>
         <div class="row">
             <div class="col s6">
-                <a href="/"><i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i></a>
+                <a href="/"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a>
             </div>
             <div class="col s6">
                 <a href="/admin"><i class="fa fa-user-circle-o fa-3x"></i></a>
@@ -28,16 +28,16 @@
     <!-- End of header -->
 
     <!-- Show all blog posts -->
-    <h1 role="title" class="title">Showing blog list</h1>
+    <!-- Blog title -->
+    <h2 class="btitle">
+        <%= blog.blogTitle %>
+    </h2>
     <div>
         <article class="blog">
-            <h2 class="btitle">
-                <%= blog.blogTitle %>
-            </h2>
             <p class="bcontent">
                 <%= blog.blogContent %>
             </p>
-            <h2 class="bcomments">Comments</h2>
+            <h3 class="bcomments">Comments</h3>
             <!-- for loop to show all blog comments for each blog -->
             <% for (let i in blog.comments) { %>
                 <p>
