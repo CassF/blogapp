@@ -30,5 +30,6 @@ The purpose of this project is to allow users to manage a blog.
 ***
 
 ##Usage
+To use this application: 
 
 1. Visit [Blog](https://blogplatform.herokuapp.com/)
