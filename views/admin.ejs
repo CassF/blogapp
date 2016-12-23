@@ -39,11 +39,12 @@
                 </div>
             </nav>
         </div>
+        <!-- End of navbar -->
     </header>
     <!-- Start of Create blogpost section -->
     <section id="createBlog" class="section scrollspy">
         <div class="row">
-            <!-- Route -->
+            <!-- Create blog form -->
             <form class="col s12" method="POST" action="/admin">
                 <div class="row">
                     <h3 class="inputHeading"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> New blogpost</h3>
@@ -68,29 +69,30 @@
     <% include ./partials/viewAllBlogs %>
         <!-- End of Template to view all blogs -->
 
-    <!-- Start of Delete blogpost section -->
-    <section id="deleteBlogpost" class="section scrollspy">
-        <div>
-            <h3 class="inputHeading"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete a blogpost</h3>
-            <input class="submissionfield" type="search" id="deleteBar">
-            <button class="btn waves-effect waves-light" id="deleteBlog">Delete</button>
-        </div>
-    </section>
+        <!-- Start of Delete blogpost section -->
+        <section id="deleteBlogpost" class="section scrollspy">
+            <div>
+                <h3 class="inputHeading"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete a blogpost</h3>
+                <input class="submissionfield col s6" type="search" id="deleteBar">
+                <button class="btn waves-effect waves-light" id="deleteBlog">Delete</button>
+            </div>
+        </section>
+        <!-- End of Delete blogpost section -->
 
-    <!-- Input Footer Template -->
-    <% include ./partials/footer %>
-    <!-- End of Footer Template -->
+        <!-- Input Footer Template -->
+        <% include ./partials/footer %>
+        <!-- End of Footer Template -->
 
-    <!--Import jQuery then materialize.js-->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <!-- Import CSS animation script -->
-    <script src="js/css3-animate-it.js"></script>
-    <!-- Import Font Awesome script -->
-    <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
-    <!-- Import my personal stylesheet -->
-    <script src="js/deleteBlog.js"></script>
-    <script src="js/style.js"></script>
+        <!--Import jQuery then materialize.js-->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <!-- Import CSS animation script -->
+        <script src="js/css3-animate-it.js"></script>
+        <!-- Import Font Awesome script -->
+        <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
+        <!-- Import my personal stylesheet -->
+        <script src="js/deleteBlog.js"></script>
+        <script src="js/style.js"></script>
 </body>
 
 </html>

@@ -31,22 +31,6 @@ class Functions {
             }
         )
     }
-
-    createObjectBlog(newBlog) {
-        return new Promise(
-            (resolve) => {
-                resolve(newBlog);
-            }
-        )
-    }
-
-    createObjectComment() {
-        return new Promise(
-            (resolve) => {
-                resolve(aString);
-            }
-        )
-    }
 };
 
 module.exports = Functions;
