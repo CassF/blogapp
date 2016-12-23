@@ -43,7 +43,13 @@ h1 {
    margin-bottom: 2%
 padding-bottom: 0;
 }
-h2, h3 {
+h2 {
+    font-family: 'QuirkyMessy'; 
+       font-size: 1200%;
+           color: #B4B7B9;
+
+}
+h3 {
         font-family: 'Comfortaa', cursive;
             color: #B4B7B9;
 
@@ -87,7 +93,7 @@ margin-left:96%;
 margin-top: 5px;
 }
 
-.fa-arrow-circle-left {
+.fa-home {
      color: #B4B7B9;
 margin-right:96%;
 }

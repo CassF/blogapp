@@ -1,5 +1,5 @@
-//This is another example of class, in this case we are constructing it, now in this constructor we are looking for the correct object type 
-//AND whether the field actually exists. If anything of these fail in the constructor we throw our own custom error.
+//Constructing a comment class. In this constructor it checks for the correct object type  and
+//whether the field actually exists. If anything of these fail in the constructor it throws a custom error.
 class Comments {
 
     constructor(obj) {
@@ -14,5 +14,5 @@ class Comments {
     }
 }
 
-//Exporting the Blog class
+//Exporting the Comments class
 module.exports = Comments;

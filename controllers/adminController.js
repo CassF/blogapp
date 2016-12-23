@@ -3,7 +3,7 @@ const Blog = require("../models/blog");
 class AdminController {
     /**
      * This method shows all blog post
-     * It loops through the req.session.blogs array and prints the blog title and content for each i tem 
+     * 
      */
     static showBlog(req, res) {
         res.render("admin", {
