@@ -14,70 +14,83 @@
 <body>
     <!-- Start of header -->
     <header>
+        <div class="row">
+            <a href="/"><i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i></a>
+        </div>
+    </header>
+    <!-- End of header -->
+    <!-- Start of banner -->
+    <div class="banner">
+        <h1>Scribbl</h1>
+    </div>
+    <!-- End of Banner -->
+    <!-- Start of header -->
+    <header>
         <!-- Start of navbar -->
         <div class="navbar-fixed">
             <nav role="navigation" class="navbar-fixed">
                 <div class="nav-wrapper">
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
                     <ul class="navToAppend">
-                        <li><a href="/">Back to Home</a></li>
                         <li><a class="waves-effect waves-light scrollspy" id="createNav" href="#createBlog">New Blogpost</a></li>
                         <li><a class="waves-effect waves-light scrollspy" id="viewNav" href="#viewBlogs">View All Blogs</a></li>
                         <li><a class="waves-effect waves-light scrollspy" id="deleteNav" href="#deleteBlogpost">Delete Blogpost</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="/">Back to Home</a></li>
-                        <li><a id="createNav" href="#createBlog">New Blogpost</a></li>
-                        <li><a id="viewNav" href="#viewBlogs">View All Blogs</a></li>
-                        <li><a id="deleteNav" href="#deleteBlogpost">Delete Blogpost</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
-    <h1 role="pageTitle" class="title">Admin</h1>
+    <!-- Start of Create blogpost section -->
     <section id="createBlog" class="section scrollspy">
         <div class="row">
+            <!-- Route -->
             <form class="col s12" method="POST" action="/admin">
                 <div class="row">
-                    <h2 class="inputHeading">Create a new blogpost</h2>
+                    <h3 class="inputHeading"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> New blogpost</h3>
                     <div class="input-field col s6">
-                        <input  name="blogTitle" id="blogTitle" type="text" class="validate" required>
-                        <label for="blog_Title">Blog Title</label>
+                        <input name="blogTitle" id="blogTitle" type="text" class="validate" required>
+                        <label for="blogTitle">Blog Title</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input  name="blogContent" id="blogContent" type="text" class="validate" required>
-                        <label for="blog_Content">Blog Content</label>
+                        <input name="blogContent" id="blogContent" type="text" class="validate" required>
+                        <label for="blogContent">Blog Content</label>
                     </div>
                 </div>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Create Blog Post</button>
             </form>
         </div>
     </section>
-    <!-- Input Template to view all blogs-->
-    <% include ./partials/viewAllBlogs %>
-        <section id="deleteBlogpost" class="section scrollspy">
-            <div>
-                <h2 class="inputHeading">Delete a blogpost</h2>
-                <input type="search" id="deleteBar">
-                <button id="deleteBlog">Delete</button>
-            </div>
-        </section>
-        <!-- Input Footer Template -->
-        <% include ./partials/footer %>
+    <!-- End of Create blogpost section -->
 
-            <!--Import jQuery then materialize.js-->
-            <script src="js/jquery-3.1.1.min.js"></script>
-            <script src="js/materialize.js"></script>
-            <!-- Import CSS animation script -->
-            <script src="js/css3-animate-it.js"></script>
-            <!-- Import Font Awesome script -->
-            <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
-            <!-- Import my personal stylesheet -->
-            <script src="js/deleteBlog.js"></script>
-            <script src="js/style.js"></script>
+    <!-- Input Template to view all blogs -->
+    <% include ./partials/viewAllBlogs %>
+        <!-- End of Template to view all blogs -->
+
+    <!-- Start of Delete blogpost section -->
+    <section id="deleteBlogpost" class="section scrollspy">
+        <div>
+            <h3 class="inputHeading"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete a blogpost</h3>
+            <input class="submissionfield" type="search" id="deleteBar">
+            <button class="btn waves-effect waves-light" id="deleteBlog">Delete</button>
+        </div>
+    </section>
+
+    <!-- Input Footer Template -->
+    <% include ./partials/footer %>
+    <!-- End of Footer Template -->
+
+    <!--Import jQuery then materialize.js-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <!-- Import CSS animation script -->
+    <script src="js/css3-animate-it.js"></script>
+    <!-- Import Font Awesome script -->
+    <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
+    <!-- Import my personal stylesheet -->
+    <script src="js/deleteBlog.js"></script>
+    <script src="js/style.js"></script>
 </body>
 
 </html>

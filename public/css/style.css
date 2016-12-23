@@ -1,16 +1,20 @@
+/* IMPORT FONTS */
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|News+Cycle');
 
-
+@font-face { 
+     font-family: 'QuirkyMessy'; 
+ src: url('../fonts/quirky_messy/QuirkyMessy.ttf'); } 
 /* START OF NAVBAR */
 nav {
     background-color:#A6D0F9 !important;
     width: 100%;
     position: absolute !important;
-    border-top: 0px;
+    border-top: 3px solid #B4B7B9;
+    border-bottom: 2px solid #B4B7B9;
 }
 
 nav li {
-    width: 25% !important;
+    width: 33% !important;
     text-transform: uppercase;
 }
 
@@ -29,25 +33,71 @@ nav ul li a:hover {
 }
 /* END OF NAVBAR */
 
-/* START OF HEADINGS */
+/* START OF MAIN TEXT STYLES */
 h1 {
-    /*text-align: center;*/
-      font-family: 'Comfortaa', cursive;
+    text-align: center;
+      /*font-family: 'Comfortaa', cursive;*/
+    font-family: 'QuirkyMessy'; 
+    font-size: 1200%;
+    color: #B4B7B9;
+   margin-bottom: 2%
+padding-bottom: 0;
+}
+h2, h3 {
+        font-family: 'Comfortaa', cursive;
+            color: #B4B7B9;
 
 }
-h2 {
-        font-family: 'Comfortaa', cursive;
-        text-align: center;
+h5 {
+    font-family: 'Comfortaa', cursive;
+	color: #DDDEDF;
+	font-size: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 0;
 }
 p {
         font-family: 'News Cycle', sans-serif;
+        	font-size: 1.4rem;
 }
 
 .userNav nav li {
     text-align: center;
     width: 50% !important;
-    
 }
+/* END OF MAIN TEXT STYLES */
+
+/* BORDER */
+.blog {
+ border-radius: 40px 40px 40px 40px;
+-moz-border-radius: 40px 40px 40px 40px;
+-webkit-border-radius: 40px 40px 40px 40px;
+border: 3px solid #A6D0F9;
+width: 80%;
+   margin: 0 auto;
+   margin-bottom: 5%;
+   padding: 2%;
+
+ }
+
+.fa-user-circle-o {
+color: #B4B7B9;
+margin-left:96%;
+margin-top: 5px;
+}
+
+.fa-arrow-circle-left {
+     color: #B4B7B9;
+margin-right:96%;
+}
+.fa-user-circle-o {
+     color: #B4B7B9;
+    margin-left:96%;
+}
+/* END OF BORDER *?
+
+/* START OF INPUT FIELDS */   
 input:not([type]):focus:not([readonly]),
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
@@ -109,10 +159,10 @@ textarea.materialize-textarea:focus.valid {
     cursor: text;
     transition: .2s ease-out;
      font-family: 'News Cycle', sans-serif;
-     /*text-transform: uppercase;*/
 }
+/* END OF INPUT FIELDS */   
 
-
+/* START OF BUTTONS */
 .btn {
     background-color: #A6D0F9;
 }
@@ -120,6 +170,7 @@ textarea.materialize-textarea:focus.valid {
     background-color: white;
     color:#B4B7B9;
 }
+/* END OF BUTTONS */
 
 /* START OF BLOGPOST */
 /*.blogPost {
@@ -130,6 +181,7 @@ textarea.materialize-textarea:focus.valid {
     max-width: 1700px !important;
 }*/
 
+/* START OF FOOTER */
 footer.page-footer {
     background-color: #A6D0F9;
     color: white;
@@ -138,3 +190,4 @@ footer.page-footer {
     height: 100%;
             font-family: 'News Cycle', sans-serif;
 }
+/* END OF FOOTER */

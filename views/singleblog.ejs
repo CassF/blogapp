@@ -14,28 +14,51 @@
 </head>
 
 <body>
-    <% include ./partials/userHeader %>
-
-        <h1 role="title" class="title">Showing blog list</h1>
-        <div>
-            <article>
-                <h2 class="btitle">
-                    <%= blog.blogTitle %>
-                </h2>
-                <p class="bcontent">
-                    <%= blog.blogContent %>
-                </p>
-                <h2 class="bcomments">Comments</h2>
-
-                <% for (let i in blog.comments) { %>
-                    <p>
-                        <%= blog.comments[i].comment %>
-                    </p>
-                    <% } %>
-            </article>
+    <!-- Start of header -->
+    <header>
+        <div class="row">
+            <div class="col s6">
+                <a href="/"><i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i></a>
+            </div>
+            <div class="col s6">
+                <a href="/admin"><i class="fa fa-user-circle-o fa-3x"></i></a>
+            </div>
         </div>
+    </header>
+    <!-- End of header -->
+
+    <!-- Show all blog posts -->
+    <h1 role="title" class="title">Showing blog list</h1>
+    <div>
+        <article class="blog">
+            <h2 class="btitle">
+                <%= blog.blogTitle %>
+            </h2>
+            <p class="bcontent">
+                <%= blog.blogContent %>
+            </p>
+            <h2 class="bcomments">Comments</h2>
+            <!-- for loop to show all blog comments for each blog -->
+            <% for (let i in blog.comments) { %>
+                <p>
+                    <%= blog.comments[i].comment %>
+                </p>
+                <% } %>
+        </article>
+    </div>
+    <!-- End of show all blog posts -->
+    <!-- Input Footer Template -->
+    <% include ./partials/footer %>
+        <!--Import jQuery then materialize.js-->
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
+        <!-- Import CSS animation script -->
+        <script src="js/css3-animate-it.js"></script>
+        <!-- Import Font Awesome script -->
+        <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
+        <!-- Import my personal stylesheet -->
+        <script src="js/deleteBlog.js"></script>
+        <script src="js/style.js"></script>
 </body>
 
 </html>

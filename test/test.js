@@ -5,6 +5,8 @@ const expect = require('chai').expect;
 const insert = require('chai').assert;
 const Functions = require("../functions");
 const func = new Functions();
+const chaiSubset = require('chai-subset');
+chai.use(chaiSubset);
 
 
 describe("Admin", () => {
@@ -47,3 +49,34 @@ describe("User", () => {
             })
     });
 });
+
+const Blog = require("../models/blog");
+const newBlog = {
+    blogTitle:"Blog title 3",
+    blogContent: "Blog content"
+};
+
+
+
+describe("Models", function () {
+    it("should create a blog object", (done) => {
+        expect(newBlog).to.containSubset({blogTitle:"Blog title 3", blogContent: "Blog content"
+        });
+        done();
+        })
+    });
+
+    it("should create a comment object", (done) => {
+
+        func.createObjectComment(object2)
+            .then(result => {
+
+
+            })
+    });
+
+
+// const require your model doc   
+// create a new json object 
+// describe the function 
+// to contain a subset (new json obj)
